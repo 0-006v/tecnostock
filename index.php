@@ -8,8 +8,10 @@ $pdo = obtener_conexion();
 // ---- Filtros (GET) ----
 $q      = trim((string) ($_GET['q'] ?? ''));
 $cat    = ctype_digit((string) ($_GET['categoria'] ?? '')) ? (int) $_GET['categoria'] : 0;
-$estado = in_array($_GET['estado'] ?? 'activos', ['activos', 'inactivos', 'todos'], true)
-    ? $_GET['estado'] : 'activos';
+$estado = (string) ($_GET['estado'] ?? 'activos');
+if (!in_array($estado, ['activos', 'inactivos', 'todos'], true)) {
+    $estado = 'activos';
+}
 
 try {
     // ---- Tarjetas resumen ----
