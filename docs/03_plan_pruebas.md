@@ -4,14 +4,14 @@
 |---|---|---|---|---|
 | CP01 | Normal | Login admin@tecnostock.cl / Admin123* | Ingresa al inventario con mensaje de bienvenida | ✔ |
 | CP02 | Negativo | Clave incorrecta | "Credenciales incorrectas." | ✔ |
-| CP03 | Negativo | Acceder a `index.php` sin sesión | Redirige a login | ☐ |
+| CP03 | Negativo | Acceder a `index.php` sin sesión | Redirige a login | ✔ |
 | CP04 | Negativo | Usuario con estado 0 (`UPDATE usuarios SET estado=0`) | "Su usuario está inactivo" | ☐ |
-| CP05 | Normal | Crear producto TS-100, precio 9990, stock 10, mínimo 3 | Aparece en el listado; movimiento "Stock inicial" | ☐ |
+| CP05 | Normal | Crear producto TS-100, precio 9990, stock 10, mínimo 3 | Aparece en el listado; movimiento "Stock inicial" | ✔ |
 | CP06 | Negativo | Crear con código TS-001 | "Ya existe un producto con ese código." | ✔ |
 | CP07 | Límite | Precio -1 | Error "no puede ser negativo" (JS y PHP) | ✔ |
 | CP08 | Límite | Stock mínimo -5 / stock inicial -1 | Rechazado en cliente y servidor | ✔ |
-| CP09 | Límite | Precio 0 y stock 0 | Se acepta (≥ 0) | ☐ |
-| CP10 | Negativo | Campos vacíos | Mensajes por campo, sin envío | ☐ |
+| CP09 | Límite | Precio 0 y stock 0 | Se acepta (≥ 0) | ✔ |
+| CP10 | Negativo | Campos vacíos | Mensajes por campo, sin envío | ✔ |
 | CP11 | Normal | Buscar "audio", "TS-00", "cable" | Filtra por categoría, código y nombre | ✔ |
 | CP12 | Normal | Editar precio, descripción, categoría | Cambios visibles en el listado | ✔ |
 | CP13 | Normal | Editar stock 10→15 | stock = 15 y movimiento entrada de 5 (ajuste) | ✔ |
